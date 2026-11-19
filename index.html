@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luces y Sombras — Compañía de teatro | Temporada 2027</title>
+  <meta name="description" content="Luces y Sombras, compañía de teatro. Estreno el 5 de febrero de 2027 y función especial el 20 de marzo de 2027. Dirección: Mercedes Rodríguez. Autor: Daniel Cobo.">
+  <meta name="theme-color" content="#0b0a0e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Luces y Sombras — Compañía de teatro">
+  <meta property="og:description" content="Dos funciones en 2027. Una historia que ilumina lo que la sombra esconde.">
+  <meta property="og:locale" content="es_ES">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a0e'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23d9ad63'/%3E%3Ccircle cx='40' cy='27' r='16' fill='%230b0a0e'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    window.setTimeout(function () {
+      if (!window.__lucesReady) {
+        document.querySelectorAll("[data-reveal]").forEach(function (element) {
+          element.classList.add("is-visible");
+        });
+      }
+    }, 2500);
+  </script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- Sprite de iconos -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13 5.5l6.5 6.5-6.5 6.5"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.2 6.5-10a6.5 6.5 0 1 0-13 0C5.5 15.8 12 21 12 21Z"/><circle cx="12" cy="10.5" r="2.4"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 9a2 2 0 0 0 0 4v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3a2 2 0 0 1 0-4V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2Z"/><path d="M14 6v2M14 11v2M14 16v2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4.5h-3c-2.5 0-4.5 2-4.5 4.5v2H7V15h2.5v5.5H14V15h3l.5-3.5H14V9c0-.6.4-1 1-1Z"/></symbol>
+  </svg>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="#inicio" aria-label="Luces y Sombras, ir al inicio">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle cx="18" cy="20" r="12" fill="currentColor"/><circle cx="25" cy="16" r="12" fill="#0b0a0e"/></svg>
+        </span>
+        <span class="brand__text">Luces <em>y</em> Sombras</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Inicio</a></li>
+          <li><a class="nav__link" href="#actuaciones">Actuaciones</a></li>
+          <li><a class="nav__link" href="#compania">Quiénes somos</a></li>
+          <li><a class="nav__link" href="#elenco">Elenco</a></li>
+         
+        </ul>
+       
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <canvas class="hero__dust" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="beams" aria-hidden="true">
+        <span class="beam beam--one"></span>
+        <span class="beam beam--two"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow" data-reveal>Compañía de teatro · Temporada 2027</p>
+
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-top" data-reveal style="--delay:.08s">Luces</span>
+            <span class="hero__title-bottom" data-reveal style="--delay:.16s"><em>y</em> Sombras</span>
+          </h1>
+
+          <p class="hero__lead" data-reveal style="--delay:.24s">
+            Historias que se encienden en escena y se quedan en la memoria.
+            Dos funciones, un mismo deseo: que la luz te encuentre en la butaca.
+          </p>
+
+          <div class="hero__actions" data-reveal style="--delay:.32s">
+            <a class="btn btn--gold" href="#actuaciones">
+              Ver actuaciones
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#compania">Quiénes somos</a>
+          </div>
+
+          <div class="next-show" data-reveal style="--delay:.4s">
+            <p class="next-show__label"><span class="pulse-dot" aria-hidden="true"></span> Próxima función</p>
+            <p class="next-show__date" data-next-date>Viernes 5 de febrero de 2027 · 19:00 h</p>
+            <div class="countdown" data-next-countdown role="timer" aria-label="Cuenta atrás para la próxima función">
+              <div class="countdown__unit"><strong data-unit="days">00</strong><span>días</span></div>
+              <div class="countdown__unit"><strong data-unit="hours">00</strong><span>horas</span></div>
+              <div class="countdown__unit"><strong data-unit="minutes">00</strong><span>min</span></div>
+              <div class="countdown__unit countdown__unit--sec"><strong data-unit="seconds">00</strong><span>seg</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__poster-wrap" data-reveal style="--delay:.3s">
+          <div class="poster" data-tilt>
+            <div class="poster__inner">
+              <div class="poster__head">
+                <p class="poster__kicker">Temporada</p>
+                <p class="poster__year">2027</p>
+              </div>
+
+              <div class="poster__art" aria-hidden="true">
+                <svg viewBox="0 0 320 320" role="presentation">
+                  <defs>
+                    <radialGradient id="posterGold" cx="38%" cy="32%" r="72%">
+                      <stop offset="0" stop-color="#f8e4b6"/>
+                      <stop offset=".55" stop-color="#d9ad63"/>
+                      <stop offset="1" stop-color="#95672a"/>
+                    </radialGradient>
+                    <mask id="posterCrescent">
+                      <rect width="320" height="320" fill="#fff"/>
+                      <circle cx="192" cy="140" r="94" fill="#000"/>
+                    </mask>
+                    <filter id="posterGlow" x="-70%" y="-70%" width="240%" height="240%">
+                      <feGaussianBlur stdDeviation="16"/>
+                    </filter>
+                  </defs>
+                  <circle cx="160" cy="160" r="105" fill="url(#posterGold)" opacity=".45" filter="url(#posterGlow)"/>
+                  <circle cx="160" cy="160" r="100" fill="url(#posterGold)" mask="url(#posterCrescent)"/>
+                  <circle cx="160" cy="160" r="124" fill="none" stroke="rgba(243,234,217,.22)" stroke-width=".8" stroke-dasharray="2 7"/>
+                  <circle cx="160" cy="160" r="143" fill="none" stroke="rgba(217,173,99,.35)" stroke-width=".8"/>
+                  <circle cx="52" cy="72" r="1.6" fill="#f3ead9" opacity=".65"/>
+                  <circle cx="268" cy="92" r="2.1" fill="#f3ead9" opacity=".5"/>
+                  <circle cx="242" cy="258" r="1.4" fill="#d9ad63" opacity=".8"/>
+                  <circle cx="66" cy="236" r="1.2" fill="#d9ad63" opacity=".6"/>
+                  <path d="M28 164c38-10 71-10 109 0" fill="none" stroke="rgba(217,173,99,.3)" stroke-width=".8"/>
+                </svg>
+              </div>
+
+              <p class="poster__title">Luces<br><em>y</em> Sombras</p>
+
+              <div class="poster__dates">
+                <span><strong>05</strong> Feb</span>
+                <span class="poster__sep" aria-hidden="true"></span>
+                <span><strong>20</strong> Mar</span>
+              </div>
+            </div>
+            <span class="poster__stamp">Estreno · 05·02·27</span>
+          </div>
+          <p class="poster__caption">Dos funciones · Una misma emoción</p>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#actuaciones" aria-label="Bajar a las actuaciones">
+        <span>Desliza</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Teatro independiente</span><span class="marquee__star">✦</span>
+        <span>Temporada 2027</span><span class="marquee__star">✦</span>
+        <span>Dos únicas funciones</span><span class="marquee__star">✦</span>
+        <span>Emoción en escena</span><span class="marquee__star">✦</span>
+        
+        <span>Luces y Sombras</span><span class="marquee__star">✦</span>
+        <span>Teatro independiente</span><span class="marquee__star">✦</span>
+        <span>Temporada 2027</span><span class="marquee__star">✦</span>
+        <span>Dos únicas funciones</span><span class="marquee__star">✦</span>
+        <span>Emoción en escena</span><span class="marquee__star">✦</span>
+        
+        <span>Luces y Sombras</span><span class="marquee__star">✦</span>
+      </div>
+    </div>
+
+    <!-- ============ ACTUACIONES ============ -->
+    <section class="section shows" id="actuaciones" aria-labelledby="shows-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>01 — Agenda</p>
+          <div class="section-head__row">
+            <h2 class="section-title" id="shows-title" data-reveal>Próximas <em>actuaciones</em></h2>
+            <p class="section-intro" data-reveal style="--delay:.1s">
+              Dos únicas citas en 2027. Reserva pronto: el aforo es limitado
+              y las buenas historias siempre encuentran su público.
+            </p>
+          </div>
+        </header>
+
+        <div class="shows__grid">
+          <article class="show-card" data-show-card="estreno" data-reveal>
+            <span class="show-card__index" aria-hidden="true">01</span>
+            <div class="show-card__date">
+              <span class="show-card__day">05</span>
+              <span class="show-card__month">Feb · 2027</span>
+              <span class="show-card__weekday">Viernes</span>
+            </div>
+            <div class="show-card__body">
+              <span class="tag" data-show-tag>Estreno</span>
+              <h3>Estreno de temporada</h3>
+              <p>
+                El primer encuentro con nuestro nuevo montaje. Una noche para
+                descubrir lo que hemos preparado con tanta luz y tanto cuidado.
+              </p>
+              <ul class="show-meta">
+                <li>
+                  <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+                  <span>19:00 h · Puertas a las 18:00 h</span>
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                  <span>Centro Cultural Casa De Vacas · PASEO  COLOMBIA,  1  28009  MADRID </span>
+                </li>
+              </ul>
+              <div class="countdown countdown--sm" data-countdown data-show="estreno" aria-label="Cuenta atrás para el estreno">
+                <div class="countdown__unit"><strong data-unit="days">00</strong><span>días</span></div>
+                <div class="countdown__unit"><strong data-unit="hours">00</strong><span>horas</span></div>
+                <div class="countdown__unit"><strong data-unit="minutes">00</strong><span>min</span></div>
+                <div class="countdown__unit countdown__unit--sec"><strong data-unit="seconds">00</strong><span>seg</span></div>
+              </div>
+             
+            </div>
+          </article>
+
+          <article class="show-card" data-show-card="especial" data-reveal style="--delay:.12s">
+            <span class="show-card__index" aria-hidden="true">02</span>
+            <div class="show-card__date">
+              <span class="show-card__day">20</span>
+              <span class="show-card__month">Mar · 2027</span>
+              <span class="show-card__weekday">Sábado</span>
+            </div>
+            <div class="show-card__body">
+              <span class="tag" data-show-tag>Función especial</span>
+              <h3>Función especial</h3>
+              <p>
+                Volvemos a escena para quienes se quedaron con ganas de más.
+                Misma emoción, nueva oportunidad de vivir el teatro en directo.
+              </p>
+              <ul class="show-meta">
+                <li>
+                  <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+                  <span>20:00 h</span>
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                  <span>Teatro Municipal · Sala Principal</span>
+                </li>
+              </ul>
+              <div class="countdown countdown--sm" data-countdown data-show="especial" aria-label="Cuenta atrás para la función especial">
+                <div class="countdown__unit"><strong data-unit="days">00</strong><span>días</span></div>
+                <div class="countdown__unit"><strong data-unit="hours">00</strong><span>horas</span></div>
+                <div class="countdown__unit"><strong data-unit="minutes">00</strong><span>min</span></div>
+                <div class="countdown__unit countdown__unit--sec"><strong data-unit="seconds">00</strong><span>seg</span></div>
+              </div>
+              
+            </div>
+          </article>
+        </div>
+
+        <p class="shows__note" data-reveal>
+          Las reservas se confirman por correo. Si necesitas accesibilidad
+          o una reserva de grupo, escríbenos y lo organizamos contigo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ QUIÉNES SOMOS ============ -->
+    <section class="section about" id="compania" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__aside">
+          <p class="eyebrow" data-reveal>02 — La compañía</p>
+          <h2 class="section-title" id="about-title" data-reveal>Quiénes <em>somos</em></h2>
+          <p class="about__quote" data-reveal style="--delay:.1s">
+            La luz no existe sin la sombra.
+          </p>
+        </div>
+
+        <div class="about__body">
+          <p class="lead" data-reveal>
+            Somos una compañía que cree en el teatro como un lugar de encuentro:
+            una sala a oscuras, unas cuantas butacas y una historia dispuesta
+            a cambiarlo todo.
+          </p>
+          <p data-reveal>
+            Luces y Sombras nace del gusto por contar desde lo esencial. Trabajamos
+            el texto, el silencio y la luz con la misma atención, buscando esa emoción
+            que solo aparece cuando el escenario deja de ser un lugar y se convierte
+            en un espejo.
+          </p>
+          <p data-reveal>
+            En 2027 presentamos un montaje íntimo y directo, construido desde la
+            complicidad de un equipo que disfruta haciendo teatro y que quiere
+            compartirlo contigo.
+          </p>
+
+          <div class="credits">
+            <article class="credit" data-reveal>
+              <p class="credit__role">Dirección</p>
+              <h3 class="credit__name">Mercedes Rodríguez</h3>
+              <p class="credit__desc">
+                La mirada que ordena el caos: marca el ritmo, cuida a cada intérprete
+                y convierte la escena en un lugar habitable.
+              </p>
+            </article>
+            <article class="credit" data-reveal style="--delay:.08s">
+              <p class="credit__role">Autoría</p>
+              <h3 class="credit__name">Daniel Cobo</h3>
+              <p class="credit__desc">
+                La palabra que abre la puerta. Su texto es el punto de partida
+                de todo lo que ocurre sobre las tablas.
+              </p>
+            </article>
+            <article class="credit" data-reveal style="--delay:.16s">
+              <p class="credit__role">Compañía</p>
+              <h3 class="credit__name">Luces y Sombras</h3>
+              <p class="credit__desc">
+                Un equipo que entiende el teatro como oficio, juego y encuentro.
+                Temporada 2027.
+              </p>
+            </article>
+          </div>
+
+          <dl class="stats" data-reveal>
+            <div class="stat">
+              <dt>Funciones</dt>
+              <dd>02</dd>
+            </div>
+            <div class="stat">
+              <dt>Intérpretes</dt>
+              <dd>05</dd>
+            </div>
+            <div class="stat">
+              <dt>Compañía</dt>
+              <dd>01</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ELENCO ============ -->
+    <section class="section cast" id="elenco" aria-labelledby="cast-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow" data-reveal>03 — Reparto</p>
+          <h2 class="section-title" id="cast-title" data-reveal>Ellos son el <em>elenco</em></h2>
+          <p class="section-intro" data-reveal style="--delay:.1s">
+            Cinco intérpretes, cinco maneras de habitar la escena. Ellos ponen
+            voz, cuerpo y verdad a esta historia.
+          </p>
+        </header>
+
+        <ul class="cast__grid">
+          <li class="cast-card" data-reveal>
+            <span class="cast-card__num" aria-hidden="true">01</span>
+            <div class="cast-card__portrait"><span><<img src="Delia2.png"></span></div>
+            <div class="cast-card__info">
+              <h3>Javier Ruiz</h3>
+              <p>Intérprete</p>
+            </div>
+          </li>
+          <li class="cast-card" data-reveal style="--delay:.06s">
+            <span class="cast-card__num" aria-hidden="true">02</span>
+            <div class="cast-card__portrait"><span>GR</span></div>
+            <div class="cast-card__info">
+              <h3>Gabriel Romero</h3>
+              <p>Intérprete</p>
+            </div>
+          </li>
+          <li class="cast-card" data-reveal style="--delay:.12s">
+            <span class="cast-card__num" aria-hidden="true">03</span>
+            <div class="cast-card__portrait"><span>FS</span></div>
+            <div class="cast-card__info">
+              <h3>Fernando Santos</h3>
+              <p>Intérprete</p>
+            </div>
+          </li>
+          <li class="cast-card" data-reveal style="--delay:.18s">
+            <span class="cast-card__num" aria-hidden="true">04</span>
+            <div class="cast-card__portrait"><span>AP</span></div>
+            <div class="cast-card__info">
+              <h3>Aroa Piñeiro</h3>
+              <p>Intérprete</p>
+            </div>
+          </li>
+          <li class="cast-card" data-reveal style="--delay:.24s">
+            <span class="cast-card__num" aria-hidden="true">05</span>
+            <div class="cast-card__portrait"><span>T</span></div>
+            <div class="cast-card__info">
+              <h3>Toñi</h3>
+              <p>Intérprete</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CITA ============ -->
+    <section class="quote-band" aria-label="Frase de la compañía">
+      <div class="container">
+        <blockquote data-reveal>
+          <p>«El teatro es el lugar donde la luz y la sombra se dan la mano.»</p>
+          <footer>Luces y Sombras</footer>
+        </blockquote>
+      </div>
+    </section>
+
+   
+
+    <!-- ============ MODAL RESERVA ============ -->
+    <dialog class="modal" id="booking-modal" aria-labelledby="modal-title">
+      <div class="modal__inner">
+        <button class="modal__close" type="button" data-close-modal aria-label="Cerrar">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+
+        <p class="eyebrow">Reserva rápida</p>
+        <h2 class="modal__title" id="modal-title">Reserva tu <em>butaca</em></h2>
+        <p class="modal__lead">Elige función, dinos cuántos sois y te confirmamos por correo.</p>
+
+        <form class="form" id="modal-form" novalidate>
+          <div class="field">
+            <label for="modal-name">Nombre y apellidos</label>
+            <input type="text" id="modal-name" name="name" autocomplete="name" placeholder="Tu nombre" required minlength="2" aria-describedby="modal-name-error">
+            <p class="field__error" id="modal-name-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="modal-email">Correo electrónico</label>
+            <input type="email" id="modal-email" name="email" autocomplete="email" placeholder="tu@correo.com" required aria-describedby="modal-email-error">
+            <p class="field__error" id="modal-email-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="modal-show">Función</label>
+              <select id="modal-show" name="show" required aria-describedby="modal-show-error">
+                <option value="" selected disabled>Selecciona una función</option>
+                <option value="estreno">Viernes 5 de febrero · 19:00 h</option>
+                <option value="especial">Sábado 20 de marzo · 20:00 h</option>
+              </select>
+              <p class="field__error" id="modal-show-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="modal-tickets">Entradas</label>
+              <input type="number" id="modal-tickets" name="tickets" min="1" max="6" step="1" value="2" inputmode="numeric" required aria-describedby="modal-tickets-error">
+              <p class="field__error" id="modal-tickets-error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="field field--check">
+            <input type="checkbox" id="modal-privacy" name="privacy" required aria-describedby="modal-privacy-error">
+            <label for="modal-privacy">Acepto que Luces y Sombras me contacte para confirmar esta reserva.</label>
+            <p class="field__error" id="modal-privacy-error" aria-live="polite"></p>
+          </div>
+
+          <button class="btn btn--gold btn--full" type="submit">
+            Enviar solicitud
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </form>
+
+        <div class="form-success" data-success hidden>
+          <span class="form-success__icon" aria-hidden="true">
+            <svg class="icon"><use href="#i-check"/></svg>
+          </span>
+          <h3>¡Solicitud recibida!</h3>
+          <p>
+            Gracias, <strong data-success-name></strong>. Tu solicitud para
+            <strong data-success-show></strong> (<span data-success-tickets></span>)
+            queda apuntada. Te escribiremos a <strong data-success-email></strong>
+            para confirmar.
+          </p>
+          <button class="btn btn--gold btn--full" type="button" data-reset-form>Cerrar</button>
+        </div>
+      </div>
+    </dialog>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="#inicio" aria-label="Luces y Sombras, volver al inicio">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><circle cx="18" cy="20" r="12" fill="currentColor"/><circle cx="25" cy="16" r="12" fill="#08070a"/></svg>
+          </span>
+          <span class="brand__text">Luces <em>y</em> Sombras</span>
+        </a>
+        <p>Teatro que ilumina lo que la sombra esconde.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Enlaces del pie de página">
+        <p class="footer__title">Explorar</p>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#actuaciones">Actuaciones</a></li>
+          <li><a href="#compania">Quiénes somos</a></li>
+          <li><a href="#elenco">Elenco</a></li>
+        
+        </ul>
+      </nav>
+
+      <div class="footer__social">
+        <p class="footer__title">Síguenos</p>
+        <div class="footer__social-links">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg>
+          </a>
+          <a href="mailto:reservas@lucesysombras.es" aria-label="Enviar un correo">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+          </a>
+        </div>
+        <p class="footer__place">Teatro Casa De Vacas · PASEO  COLOMBIA,  1  28009  MADRID </p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span data-year>2026</span> Luces y Sombras. Todos los derechos reservados.</p>
+      <p>Hecho con luz, sombra y mucho teatro.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Volver arriba">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </button>
+
+</body>
+</html>
