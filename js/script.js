@@ -451,7 +451,7 @@
     }
 
     /* Si el servicio no responde, muestra al menos un número local. */
-    function showLocalCount(increment) {
+    function showLocalCount(increment, minimum = 0) {
       let value = 0;
       try {
         value = Number(window.localStorage.getItem(LOCAL_COUNT_KEY)) || 0;
@@ -459,6 +459,7 @@
         /* Almacenamiento bloqueado: se muestra 1 cuando corresponde. */
       }
       if (increment) value += 1;
+      if (value < minimum) value = minimum;
       try {
         window.localStorage.setItem(LOCAL_COUNT_KEY, String(value));
       } catch (_) {
@@ -468,7 +469,7 @@
     }
 
     if (alreadyCounted || noTracking) {
-      readCount("get").catch(() => showLocalCount(false));
+      readCount("get").catch(() => showLocalCount(false, 1));
       return;
     }
 
