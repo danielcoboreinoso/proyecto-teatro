@@ -1963,11 +1963,20 @@ body.nav-open .nav-toggle__bars span:last-child {
   color: #8a817a;
 }
 .footer__visits {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
   white-space: nowrap;
 }
 .footer__visits span {
   color: var(--gold-light);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums lining-nums;
+  text-shadow: 0 0 18px rgba(217, 173, 99, 0.4);
 }
 
 /* ---------- Volver arriba ---------- */

@@ -417,6 +417,7 @@
     const BASE = "https://countapi.mileshilliard.com/api/v1";
     const KEY = "luces-y-sombras-visitas";
     const STORAGE_KEY = "luces-visitas-registradas";
+    const LOCAL_COUNT_KEY = "luces-visitas-contador-local";
 
     const noTracking =
       navigator.doNotTrack === "1" ||
@@ -449,14 +450,38 @@
       }
     }
 
+    /* Si el servicio no responde, muestra al menos un número local. */
+    function showLocalCount(increment) {
+      let value = 0;
+      try {
+        value = Number(window.localStorage.getItem(LOCAL_COUNT_KEY)) || 0;
+      } catch (_) {
+        /* Almacenamiento bloqueado: se muestra 1 cuando corresponde. */
+      }
+      if (increment) value += 1;
+      try {
+        window.localStorage.setItem(LOCAL_COUNT_KEY, String(value));
+      } catch (_) {
+        /* Nada que hacer si el navegador bloquea localStorage. */
+      }
+      output.textContent = new Intl.NumberFormat("es-ES").format(value);
+    }
+
     if (alreadyCounted || noTracking) {
-      readCount("get").catch(() => {});
+      readCount("get").catch(() => showLocalCount(false));
       return;
     }
 
     readCount("hit")
       .then(markAsCounted)
-      .catch(() => readCount("get").catch(() => {}));
+      .catch(() =>
+        readCount("get")
+          .then(() => markAsCounted())
+          .catch(() => {
+            markAsCounted();
+            showLocalCount(true);
+          })
+      );
   }
 
   setupVisitCounter();
