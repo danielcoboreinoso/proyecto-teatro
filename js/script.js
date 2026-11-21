@@ -414,10 +414,14 @@
     const output = $("[data-visits]");
     if (!output) return;
 
-    const BASE = "https://countapi.mileshilliard.com/api/v1";
-    const KEY = "luces-y-sombras-visitas";
+    const BASE = "https://abacus.jasoncameron.dev";
+    const NAMESPACE = "luces-y-sombras";
+    const KEY = "visitas";
     const STORAGE_KEY = "luces-visitas-registradas";
     const LOCAL_COUNT_KEY = "luces-visitas-contador-local";
+    const LAST_VALUE_KEY = "luces-visitas-ultimo-valor";
+    /* Último valor real conocido antes de migrar de proveedor. */
+    const MINIMUM_COUNT = 7;
 
     const noTracking =
       navigator.doNotTrack === "1" ||
@@ -431,18 +435,27 @@
       /* Almacenamiento bloqueado: se cuenta la visita igualmente. */
     }
 
+    function rememberValue(value) {
+      try {
+        window.localStorage.setItem(LAST_VALUE_KEY, String(value));
+      } catch (_) {
+        /* Nada que hacer si el navegador bloquea localStorage. */
+      }
+    }
+
     async function readCount(action) {
       const controller = new AbortController();
-      const timeout = window.setTimeout(() => controller.abort(), 4000);
+      const timeout = window.setTimeout(() => controller.abort(), 12000);
       try {
-        const response = await fetch(`${BASE}/${action}/${KEY}`, {
-          cache: "no-store",
-          signal: controller.signal,
-        });
+        const response = await fetch(
+          `${BASE}/${action}/${NAMESPACE}/${KEY}`,
+          { cache: "no-store", signal: controller.signal }
+        );
         if (!response.ok) throw new Error("Contador no disponible");
         const data = await response.json();
         const value = Number(data && data.value);
         if (!Number.isFinite(value)) throw new Error("Valor no válido");
+        rememberValue(value);
         output.textContent = new Intl.NumberFormat("es-ES").format(value);
       } finally {
         window.clearTimeout(timeout);
@@ -457,16 +470,19 @@
       }
     }
 
-    /* Si el servicio no responde, muestra al menos un número local. */
-    function showLocalCount(increment, minimum = 0) {
-      let value = 0;
+    /* Si el servicio no responde, muestra el último valor conocido. */
+    function showLocalCount(increment) {
+      let value = MINIMUM_COUNT;
       try {
-        value = Number(window.localStorage.getItem(LOCAL_COUNT_KEY)) || 0;
+        const lastValue = Number(window.localStorage.getItem(LAST_VALUE_KEY));
+        const localValue = Number(window.localStorage.getItem(LOCAL_COUNT_KEY));
+        if (Number.isFinite(lastValue) && lastValue > 0) value = lastValue;
+        if (Number.isFinite(localValue) && localValue > value) value = localValue;
       } catch (_) {
-        /* Almacenamiento bloqueado: se muestra 1 cuando corresponde. */
+        /* Almacenamiento bloqueado: se muestra el mínimo conocido. */
       }
       if (increment) value += 1;
-      if (value < minimum) value = minimum;
+      if (value < MINIMUM_COUNT) value = MINIMUM_COUNT;
       try {
         window.localStorage.setItem(LOCAL_COUNT_KEY, String(value));
       } catch (_) {
@@ -477,7 +493,7 @@
 
     /* Número visible desde el primer momento, sin esperar a la API. */
     const shouldCount = !alreadyCounted && !noTracking;
-    showLocalCount(shouldCount, 1);
+    showLocalCount(shouldCount);
 
     if (!shouldCount) {
       readCount("get").catch(() => {});
