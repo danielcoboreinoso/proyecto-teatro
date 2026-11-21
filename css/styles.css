@@ -1173,18 +1173,6 @@ body.nav-open .nav-toggle__bars span:last-child {
 .work-card:hover .work-card__art img {
   transform: scale(1.02);
 }
-.work-card__art-caption {
-  position: absolute;
-  bottom: 1.1rem;
-  left: 1.1rem;
-  padding: 0.35rem 0.7rem;
-  background: rgba(8, 7, 10, 0.8);
-  border: 1px solid var(--line-gold);
-  font-size: 0.55rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-}
 
 .work-card__body {
   display: flex;
