@@ -1,7 +1,8 @@
 # Luces y Sombras — Web de la compañía
 
 Web de una sola página para el grupo de teatro **Luces y Sombras**, con la
-temporada 2027, quiénes somos, elenco y un formulario de reservas.
+temporada 2027, las obras de la compañía, quiénes somos, elenco y un formulario
+de reservas.
 
 ## Cómo verla
 
@@ -22,6 +23,9 @@ proyecto-teatro/
 - Diseño teatral en negro, crema y oro, con luces, polvo de escenario y póster animado.
 - Cuenta atrás automática para la próxima función (5 de febrero de 2027).
 - Sección de próximas actuaciones con las dos fechas y sus cuentas atrás.
+- Sección «Obras» con las piezas de la compañía: empieza con *El Ascensor
+  Nupcial* y su sinopsis. Para añadir otra obra, copia el `<article class="work-card">`
+  dentro de `.works__grid`.
 - Quiénes somos con dirección (Mercedes Rodríguez) y autoría (Daniel Cobo).
 - Elenco con Javier Ruiz, Gabriel Romero, Fernando Santos, Aroa Piñeiro, Tori y Maria Jose.
 - Modal de reserva rápida y formulario de solicitud con validación.

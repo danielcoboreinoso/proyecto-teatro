@@ -1108,6 +1108,170 @@ body.nav-open .nav-toggle__bars span:last-child {
   color: var(--muted);
 }
 
+/* ---------- Obras ---------- */
+.works {
+  background: radial-gradient(ellipse at 92% 18%, rgba(217, 173, 99, 0.055), transparent 55%);
+}
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  gap: 1.3rem;
+}
+.work-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: linear-gradient(158deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.008));
+  overflow: hidden;
+  transition: transform 0.5s var(--ease), border-color 0.5s, box-shadow 0.5s;
+}
+.work-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transition: transform 0.7s var(--ease);
+  z-index: 1;
+}
+.work-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(217, 173, 99, 0.4);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.35);
+}
+.work-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Cartel del ascensor */
+.work-card__art {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 340px;
+  padding: 2.5rem 1.5rem;
+  border-right: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 50% 22%, rgba(217, 173, 99, 0.18), transparent 62%),
+    linear-gradient(160deg, #17121a, var(--ink));
+  overflow: hidden;
+}
+.work-card__art::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  width: 170px;
+  height: 150%;
+  transform: translateX(-50%) rotate(8deg);
+  background: linear-gradient(180deg, rgba(240, 212, 155, 0.18), transparent 72%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.work-card__art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(180deg, transparent 0 45px, rgba(243, 234, 217, 0.035) 45px 46px);
+  pointer-events: none;
+}
+.work-card__art-label,
+.work-card__art-floor,
+.work-card__doors,
+.work-card__art-line {
+  position: relative;
+  z-index: 1;
+}
+.work-card__art-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.work-card__art-floor {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7vw, 5.5rem);
+  line-height: 0.85;
+  color: var(--gold);
+}
+.work-card__doors {
+  display: flex;
+  gap: 4px;
+  width: min(150px, 75%);
+  height: 110px;
+  padding: 5px;
+  border: 1px solid var(--line-gold);
+  background: rgba(8, 7, 10, 0.55);
+  box-shadow: 0 0 28px rgba(217, 173, 99, 0.12);
+}
+.work-card__doors span {
+  flex: 1;
+  background: linear-gradient(90deg, rgba(217, 173, 99, 0.06), rgba(217, 173, 99, 0.2), rgba(217, 173, 99, 0.06));
+  border: 1px solid rgba(217, 173, 99, 0.16);
+  transition: transform 0.6s var(--ease);
+}
+.work-card:hover .work-card__doors span:first-child {
+  transform: translateX(-4px);
+}
+.work-card:hover .work-card__doors span:last-child {
+  transform: translateX(4px);
+}
+.work-card__art-line {
+  width: 46px;
+  height: 1px;
+  background: var(--line-gold);
+}
+
+.work-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.8rem, 3vw, 2.6rem);
+}
+.work-card__body .tag {
+  align-self: flex-start;
+}
+.work-card__body h3 {
+  margin: 1rem 0 1.6rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.05;
+  color: var(--cream);
+}
+.work-card__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.work-card__synopsis {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 56ch;
+}
+.work-card__note {
+  margin: 1.5rem 0 0;
+  padding-left: 1.2rem;
+  border-left: 1px solid var(--line-gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--gold-light);
+}
+
 /* ---------- Quiénes somos ---------- */
 .about {
   background: radial-gradient(ellipse at 0% 45%, rgba(126, 34, 51, 0.08), transparent 55%);
@@ -2044,6 +2208,17 @@ body.nav-open .nav-toggle__bars span:last-child {
   .show-card__body > p {
     max-width: 55ch;
   }
+  .work-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .work-card__art {
+    min-height: 230px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .work-card__doors {
+    height: 80px;
+  }
 }
 
 /* Pantallas bajas: el menú no debe recortarse */
@@ -2087,6 +2262,17 @@ body.nav-open .nav-toggle__bars span:last-child {
 }
 
 @media (max-width: 620px) {
+  .work-card__art {
+    min-height: 190px;
+    padding: 1.8rem 1.2rem;
+    gap: 0.7rem;
+  }
+  .work-card__doors {
+    height: 70px;
+  }
+  .work-card__note {
+    font-size: 1rem;
+  }
   .show-card {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.2rem;

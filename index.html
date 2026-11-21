@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
   <script>
     document.documentElement.classList.add("js");
     window.setTimeout(function () {
@@ -64,6 +64,7 @@
         <ul class="nav__list">
           <li><a class="nav__link" href="#inicio">Inicio</a></li>
           <li><a class="nav__link" href="#actuaciones">Actuaciones</a></li>
+          <li><a class="nav__link" href="#obras">Obras</a></li>
           <li><a class="nav__link" href="#compania">Quiénes somos</a></li>
           <li><a class="nav__link" href="#elenco">Elenco</a></li>
          
@@ -287,11 +288,56 @@
       </div>
     </section>
 
+    <!-- ============ OBRAS ============ -->
+    <section class="section works" id="obras" aria-labelledby="obras-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>02 — Obras</p>
+          <div class="section-head__row">
+            <h2 class="section-title" id="obras-title" data-reveal>Las obras que <em>hacemos</em></h2>
+            <p class="section-intro" data-reveal style="--delay:.1s">
+              Las historias que van tomando forma en el escenario. Esta es la
+              primera de una colección que iremos ampliando función a función.
+            </p>
+          </div>
+        </header>
+
+        <div class="works__grid">
+          <article class="work-card" data-reveal>
+            <div class="work-card__art" aria-hidden="true">
+              <span class="work-card__art-label">Planta</span>
+              <span class="work-card__art-floor">273</span>
+              <div class="work-card__doors"><span></span><span></span></div>
+              <span class="work-card__art-line"></span>
+            </div>
+
+            <div class="work-card__body">
+              <span class="tag">Obra 01 · Comedia de enredos</span>
+              <h3>El Ascensor Nupcial</h3>
+              <p class="work-card__label">Sinopsis</p>
+              <p class="work-card__synopsis">
+                Don García se dirige a la planta 273 para celebrar su boda, pero
+                un lento ascensor y una serie de inesperados pasajeros convertirán
+                su viaje en una auténtica pesadilla matrimonial. Entre consejos
+                disparatados, coqueteos, celos, confesiones y situaciones cada vez
+                más surrealistas, el novio empezará a cuestionarse si realmente
+                quiere casarse.
+              </p>
+              <p class="work-card__note">
+                Una comedia de enredos, humor y sorpresas donde, a veces, el mayor
+                riesgo no es quedarse atrapado en un ascensor, sino llegar al altar.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ QUIÉNES SOMOS ============ -->
     <section class="section about" id="compania" aria-labelledby="about-title">
       <div class="container about__grid">
         <div class="about__aside">
-          <p class="eyebrow" data-reveal>02 — La compañía</p>
+          <p class="eyebrow" data-reveal>03 — La compañía</p>
           <h2 class="section-title" id="about-title" data-reveal>Quiénes <em>somos</em></h2>
           <p class="about__quote" data-reveal style="--delay:.1s">
             La luz no existe sin la sombra.
@@ -365,7 +411,7 @@
     <section class="section cast" id="elenco" aria-labelledby="cast-title">
       <div class="container">
         <header class="section-head section-head--center">
-          <p class="eyebrow" data-reveal>03 — Reparto</p>
+          <p class="eyebrow" data-reveal>04 — Reparto</p>
           <h2 class="section-title" id="cast-title" data-reveal>Ellos son el <em>elenco</em></h2>
           <p class="section-intro" data-reveal style="--delay:.1s">
             Seis intérpretes, seis maneras de habitar la escena. Ellos ponen
@@ -529,6 +575,7 @@
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#actuaciones">Actuaciones</a></li>
+          <li><a href="#obras">Obras</a></li>
           <li><a href="#compania">Quiénes somos</a></li>
           <li><a href="#elenco">Elenco</a></li>
         
