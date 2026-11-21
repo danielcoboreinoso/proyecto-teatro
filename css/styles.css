@@ -1215,8 +1215,8 @@ body.nav-open .nav-toggle__bars span:last-child {
 }
 .cast__grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem 1rem;
   margin-top: 3.3rem;
 }
 .cast-card {
@@ -1290,6 +1290,10 @@ body.nav-open .nav-toggle__bars span:last-child {
 .cast-card:nth-child(5) .cast-card__portrait {
   --glow: rgba(217, 173, 99, 0.5);
   --glow2: rgba(126, 34, 51, 0.35);
+}
+.cast-card:nth-child(6) .cast-card__portrait {
+  --glow: rgba(240, 212, 155, 0.36);
+  --glow2: rgba(126, 34, 51, 0.48);
 }
 .cast-card__portrait::before {
   content: "";
@@ -1908,9 +1912,6 @@ body.nav-open .nav-toggle__bars span:last-child {
   }
   .nav__list {
     gap: 1.25rem;
-  }
-  .cast__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

@@ -23,7 +23,7 @@ proyecto-teatro/
 - Cuenta atrás automática para la próxima función (5 de febrero de 2027).
 - Sección de próximas actuaciones con las dos fechas y sus cuentas atrás.
 - Quiénes somos con dirección (Mercedes Rodríguez) y autoría (Daniel Cobo).
-- Elenco con Javier Ruiz, Gabriel Romero, Fernando Santos, Aroa Piñeiro y Toñi.
+- Elenco con Javier Ruiz, Gabriel Romero, Fernando Santos, Aroa Piñeiro, Toñi y Maria Jose.
 - Modal de reserva rápida y formulario de solicitud con validación.
 - Menú móvil, animaciones al hacer scroll, botón para volver arriba y modo de
   movimiento reducido para quien lo tenga activado en su sistema.
