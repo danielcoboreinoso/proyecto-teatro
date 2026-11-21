@@ -432,14 +432,21 @@
     }
 
     async function readCount(action) {
-      const response = await fetch(`${BASE}/${action}/${KEY}`, {
-        cache: "no-store",
-      });
-      if (!response.ok) throw new Error("Contador no disponible");
-      const data = await response.json();
-      const value = Number(data && data.value);
-      if (!Number.isFinite(value)) throw new Error("Valor no válido");
-      output.textContent = new Intl.NumberFormat("es-ES").format(value);
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 4000);
+      try {
+        const response = await fetch(`${BASE}/${action}/${KEY}`, {
+          cache: "no-store",
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error("Contador no disponible");
+        const data = await response.json();
+        const value = Number(data && data.value);
+        if (!Number.isFinite(value)) throw new Error("Valor no válido");
+        output.textContent = new Intl.NumberFormat("es-ES").format(value);
+      } finally {
+        window.clearTimeout(timeout);
+      }
     }
 
     function markAsCounted() {
@@ -468,8 +475,12 @@
       output.textContent = new Intl.NumberFormat("es-ES").format(value);
     }
 
-    if (alreadyCounted || noTracking) {
-      readCount("get").catch(() => showLocalCount(false, 1));
+    /* Número visible desde el primer momento, sin esperar a la API. */
+    const shouldCount = !alreadyCounted && !noTracking;
+    showLocalCount(shouldCount, 1);
+
+    if (!shouldCount) {
+      readCount("get").catch(() => {});
       return;
     }
 
@@ -478,10 +489,7 @@
       .catch(() =>
         readCount("get")
           .then(() => markAsCounted())
-          .catch(() => {
-            markAsCounted();
-            showLocalCount(true);
-          })
+          .catch(() => markAsCounted())
       );
   }
 
