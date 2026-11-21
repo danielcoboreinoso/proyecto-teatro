@@ -409,6 +409,58 @@
     element.textContent = String(new Date().getFullYear());
   });
 
+  /* ---------- Contador de visitas ---------- */
+  function setupVisitCounter() {
+    const output = $("[data-visits]");
+    if (!output) return;
+
+    const BASE = "https://countapi.mileshilliard.com/api/v1";
+    const KEY = "luces-y-sombras-visitas";
+    const STORAGE_KEY = "luces-visitas-registradas";
+
+    const noTracking =
+      navigator.doNotTrack === "1" ||
+      window.doNotTrack === "1" ||
+      navigator.globalPrivacyControl === true;
+
+    let alreadyCounted = false;
+    try {
+      alreadyCounted = window.localStorage.getItem(STORAGE_KEY) === "1";
+    } catch (_) {
+      /* Almacenamiento bloqueado: se cuenta la visita igualmente. */
+    }
+
+    async function readCount(action) {
+      const response = await fetch(`${BASE}/${action}/${KEY}`, {
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error("Contador no disponible");
+      const data = await response.json();
+      const value = Number(data && data.value);
+      if (!Number.isFinite(value)) throw new Error("Valor no válido");
+      output.textContent = new Intl.NumberFormat("es-ES").format(value);
+    }
+
+    function markAsCounted() {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, "1");
+      } catch (_) {
+        /* Nada que hacer si el navegador bloquea localStorage. */
+      }
+    }
+
+    if (alreadyCounted || noTracking) {
+      readCount("get").catch(() => {});
+      return;
+    }
+
+    readCount("hit")
+      .then(markAsCounted)
+      .catch(() => readCount("get").catch(() => {}));
+  }
+
+  setupVisitCounter();
+
   /* ---------- Formularios de reserva ---------- */
   function setupReservationForm(form, options = {}) {
     if (!form) return null;
